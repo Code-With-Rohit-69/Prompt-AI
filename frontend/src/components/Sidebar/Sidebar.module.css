@@ -1,0 +1,91 @@
+.sidebar_container {
+  height: 100vh;
+  width: 350px;
+  background-color: #1a1a1a;
+  border-right: 1px solid #757575;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar_top {
+  padding: 10px;
+}
+
+.sidebar_top_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.new_chat {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  padding: 0.8rem 0.8rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.new_chat:hover {
+  background-color: #222222;
+}
+
+.sidebar_main {
+  height: 500px;
+  padding-inline: 10px;
+}
+
+.heading {
+  font-size: 0.9rem;
+  color: #b5b5b5;
+  font-weight: 400;
+}
+
+.sidebar_main ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar_main ul li {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #222222;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Ellipsis {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.Ellipsis:hover {
+  background-color: #424242;
+}
+
+.copyright {
+  text-align: center;
+  color: #b5b5b5;
+  font-size: 0.9rem;
+}

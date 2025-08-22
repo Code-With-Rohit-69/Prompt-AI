@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 10;
 }
 
 .sidebar_top {
@@ -65,23 +66,29 @@
 .sidebar_main ul li {
   padding: 10px 15px;
   border-radius: 10px;
-  background-color: #222222;
-  margin-bottom: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.Ellipsis {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  padding: 3px;
+.sidebar_main ul li:hover {
+  background-color: #222222;
 }
 
-.Ellipsis:hover {
-  background-color: #424242;
+.Ellipsis {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar_main ul li:hover .Ellipsis {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sidebar_main ul li:hover .Ellipsis {
+  display: block;
 }
 
 .copyright {

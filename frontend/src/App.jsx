@@ -2,9 +2,28 @@ import ChatWindow from "./components/Chat Window/ChatWindow";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Mycontext } from "./Context";
 import "./App.css";
+import { useState } from "react";
+import { v1 as uuidv1 } from "uuid";
 
 const App = () => {
-  const providerValues = {};
+  const [prompt, setPrompt] = useState("");
+  const [reply, setReply] = useState(null);
+  const [currentThreadId, setCurrentThreadId] = useState(uuidv1());
+  const [prevChats, setPrevChats] = useState([]);
+  const [newChat, setNewChat] = useState(true);
+
+  const providerValues = {
+    prompt,
+    setPrompt,
+    reply,
+    setReply,
+    currentThreadId,
+    setCurrentThreadId,
+    newChat,
+    setNewChat,
+    prevChats,
+    setPrevChats,
+  };
 
   return (
     <div className="app">

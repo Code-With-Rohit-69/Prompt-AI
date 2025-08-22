@@ -24,7 +24,7 @@ const getOpenAIAPIResponse = async (message) => {
       options
     );
     const data = await response.json();
-    console.log(data.choices[0].message.content);
+    // console.log(data.choices[0].message.content);
     return data.choices[0].message.content;
   } catch (error) {
     console.log(error);

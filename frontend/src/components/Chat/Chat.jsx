@@ -11,6 +11,11 @@ const Chat = () => {
   const [latestReply, setLatestReply] = useState(null);
 
   useEffect(() => {
+    if (reply === null) {
+      setLatestReply(null);
+      return;
+    }
+
     if (!prevChats.length) {
       return;
     }
@@ -33,7 +38,7 @@ const Chat = () => {
 
   return (
     <>
-      {/* {newChat && <h1>Start a new chat</h1>} */}
+      {newChat && prevChats.length === 0 && <h1>Start a new chat</h1>}
       <div className={Style.chats}>
         {prevChats?.slice(0, -1).map((chat, idx) => (
           <div
@@ -50,12 +55,22 @@ const Chat = () => {
           </div>
         ))}
 
-        {prevChats.length > 0 && latestReply != null && (
-          <div className={Style.gptDiv} key={"latestReply"}>
-            <ReactMarkdown rehypePlugins={rehypeHighlight}>
-              {latestReply}
-            </ReactMarkdown>
-          </div>
+        {prevChats.length > 0 && (
+          <>
+            {latestReply === null ? (
+              <div className={Style.gptDiv} key={"latestReply"}>
+                <ReactMarkdown rehypePlugins={rehypeHighlight}>
+                  {prevChats[prevChats.length - 1].content}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              <div className={Style.gptDiv} key={"latestReply"}>
+                <ReactMarkdown rehypePlugins={rehypeHighlight}>
+                  {latestReply}
+                </ReactMarkdown>
+              </div>
+            )}
+          </>
         )}
       </div>
     </>

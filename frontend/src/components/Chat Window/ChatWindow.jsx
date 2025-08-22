@@ -14,12 +14,14 @@ const ChatWindow = () => {
     currentThreadId,
     prevChats,
     setPrevChats,
+    setNewChat
   } = useContext(Mycontext);
 
   const [loading, setLoading] = useState(false);
 
   const getReply = async () => {
     setLoading(true);
+    setNewChat(false);
     const options = {
       method: "POST",
       headers: {

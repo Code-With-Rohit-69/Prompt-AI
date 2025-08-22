@@ -6,7 +6,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 10;
+
+}
+
+.sidebar_container_open {
+  transform: translateX(0);
+}
+
+.sidebar_container_close {
+  transform: translateX(-100%);
 }
 
 .sidebar_top {
@@ -41,6 +49,10 @@
   cursor: pointer;
   border-radius: 10px;
   transition: all 0.3s;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
 }
 
 .new_chat:hover {
@@ -64,31 +76,31 @@
 }
 
 .sidebar_main ul li {
+  position: relative;
   padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 0.8rem;
 }
 
 .sidebar_main ul li:hover {
   background-color: #222222;
 }
 
-.Ellipsis {
+.trash {
+  display: flex;
+  padding: 5px 10px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
-.sidebar_main ul li:hover .Ellipsis {
+.sidebar_main ul li:hover .trash {
   visibility: visible;
   opacity: 1;
-}
-
-.sidebar_main ul li:hover .Ellipsis {
-  display: block;
 }
 
 .copyright {
